@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    int arr[100][3];
+    int i, j, sx = 0, sy = 0, sz = 0;
+
+    cin >> n;
+    for (i = 0; i < n; i++)
+    {
+        for (j = 0; j < 3; j++)
+        {
+            cin >> arr[i][j];
+        }
+    }
+
+    for (i = 0; i < n; i++)
+    {
+        for (j = 0; j < 3; j++)
+        {
+            sx += arr[i][0];
+            sy += arr[i][1];
+            sz += arr[i][2];
+        }
+    }
+
+    if (sx == 0 && sy == 0 && sz == 0)
+    {
+        cout << "YES" << endl;
+    }
+    else
+    {
+        cout << "NO" << endl;
+    }
+
+    return 0;
+}
