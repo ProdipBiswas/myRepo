@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string s;
+    int t;
+    int i, j;
+    int nOf1 = 0, nOf0 = 0;
+
+    cin >> t;
+    for (i = 1; i <= t; i++)
+    {
+        nOf1 = 0;
+        nOf0 = 0;
+        
+        cin >> s;
+        for (j = 0; j < s.length(); j++)
+        {
+            if (s.at(j) == '1')
+            {
+                nOf1++;
+            }
+            else
+            {
+                nOf0++;
+            }
+        }
+        
+        if (nOf0 + nOf1 <= 2)
+        {
+            cout << 0 << endl;
+        }
+        else if (nOf0 > nOf1)
+        {
+            cout << nOf1 << endl;
+        }
+        else if (nOf0 < nOf1)
+        {
+            cout << nOf0 << endl;
+        }
+        else
+        {
+            cout << 0 << endl;
+        }
+    }
+
+    return 0;
+}
