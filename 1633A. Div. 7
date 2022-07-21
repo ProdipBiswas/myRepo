@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int t;
+    int a, i, j, r, d = 0;
+    
+    cin >> t;
+    for ( i = 0; i < t; i++)
+    {
+        cin >> a;
+        if (a % 7 == 0)
+            cout << a << endl;
+        else
+        {
+            r = a % 10;
+            int pn = (a - r) / 10;
+            
+                if ((pn * 10 + 0) % 7 == 0)
+                    cout << pn * 10 + 0 << endl;
+                else if ((pn * 10 + 1) % 7 == 0)
+                    cout << pn * 10 + 1 << endl;
+                else if ((pn * 10 + 2) % 7 == 0)
+                    cout << pn * 10 + 2 << endl;
+                else if ((pn * 10 + 3) % 7 == 0)
+                    cout << pn * 10 + 3 << endl;
+                else if ((pn * 10 + 4) % 7 == 0)
+                    cout << pn * 10 + 4 << endl;
+                else if ((pn * 10 + 5) % 7 == 0)
+                    cout << pn * 10 + 5 << endl;
+                else if ((pn * 10 + 6) % 7 == 0)
+                    cout << pn * 10 + 6 << endl;
+                else if ((pn * 10 + 7) % 7 == 0)
+                    cout << pn * 10 + 7 << endl;
+                else if ((pn * 10 + 8) % 7 == 0)
+                    cout << pn * 10 + 8 << endl;
+                else if ((pn * 10 + 9) % 7 == 0)
+                    cout << pn * 10 + 9 << endl;
+        }
+    }
+
+    return 0;
+}
