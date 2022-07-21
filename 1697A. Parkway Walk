@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int t, n, m, i, j, a[100], sum;
+
+    cin >> t;
+    for (i = 0; i < t; i++)
+    {
+        sum = 0;
+        cin >> n >> m;
+        for (j = 0; j < n; j++)
+        {
+            cin >> a[j];
+            sum += a[j];
+        }
+
+        if (sum > m)
+        {
+            cout << sum - m << endl;
+        }
+        else
+        {
+            cout << 0 << endl;
+        }
+    }
+
+    return 0;
+}
