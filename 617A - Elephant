@@ -1,0 +1,13 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+    int x;
+    cin >> x;
+
+    cout << ceil(1.0 * x / 5) << endl;
+
+    return 0;
+}
