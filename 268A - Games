@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    int home[30];
+    int away[30];
+    int i, j;
+    int count = 0;
+
+    cin >> n;
+    for (i = 0; i < n; i++)
+    {
+        cin >> home[i] >> away[i];
+    }
+
+    for (i = 0; i < n; i++)
+    {
+        for (j = 0; j < n; j++)
+        {
+            if (home[i] == away[j])
+            {
+                count++;
+            }
+        }
+    }
+
+    cout << count << endl;
+
+    return 0;
+}
