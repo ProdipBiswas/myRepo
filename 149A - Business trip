@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int k,i,j,temp,month[12],counter=0;
+    cin>>k;
+    for(i=0;i<12;i++)
+    {
+        cin>>month[i];
+    }
+    for(i=0;i<12;i++)
+    {
+        for(j=0;j<11-i;j++)
+        {
+            if(month[j]<month[j+1])
+            {
+                temp=month[j];
+                month[j]=month[j+1];
+                month[j+1]=temp;
+            }
+        }
+    }
+    temp=0;
+    for(i=0;i<12;i++)
+    {
+        if(temp>=k)
+            break;
+        else
+        {
+            temp=temp+month[i];
+            counter++;
+        }
+        if(i==11&&temp<k)
+            counter=-1;
+    }
+    cout<<counter<<endl;
+    return 0;
+}
