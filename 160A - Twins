@@ -1,0 +1,47 @@
+#include<iostream>
+using namespace std;
+int sumofremaining(int n,int ar[],int siz);
+int main()
+{
+    int n,i,j,value=0,temp,coin=0,Sum;
+    cin>>n;
+    int ar[n];
+    for(i=0;i<n;i++)
+    {
+        cin>>ar[i];
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n-1-i;j++)
+        {
+            if(ar[j]<ar[j+1])
+            {
+                temp=ar[j+1];
+                ar[j+1]=ar[j];
+                ar[j]=temp;
+            }
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        if(value>Sum)
+            break;
+        else
+        {
+            value=value+ar[i];
+            coin++;
+        }
+        Sum=sumofremaining(i+1,ar,n);
+    }
+    cout<<coin<<endl;
+    return 0;
+}
+int sumofremaining(int n,int ar[],int siz)
+{
+    int sum=0,i;
+    for(i=n;i<siz;i++)
+    {
+        sum=sum+ar[i];
+    }
+    return sum;
+}
