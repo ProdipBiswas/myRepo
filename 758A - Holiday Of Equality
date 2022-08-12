@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+int Max(int ar[],int n)
+{
+    int Max=ar[0];
+    int i;
+    for(i=0;i<n;i++)
+    {
+        if(Max<ar[i])
+        {
+            Max = ar[i];
+        }
+    }
+    return Max;
+}
+int main()
+{
+    int n,s,cou=0;
+    cin>>n;
+    int ar[n];
+    for(int i=0; i<n; i++)
+    {
+        cin>>ar[i];
+    }
+    int M=Max(ar,n);
+
+    for(int i=0;i<n;i++)
+    {
+         if(ar[i]<M)
+            cou+=(M-ar[i]);
+    }
+    cout<<cou<<endl;
+    return 0;
+}
