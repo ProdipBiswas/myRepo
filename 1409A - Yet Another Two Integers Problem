@@ -1,0 +1,23 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+    int a,b,i,mov,test;
+    cin>>test;
+    for(i=0;i<test;i++)
+    {
+        mov=0;
+        cin>>a>>b;
+        if(a>b)
+        {
+            mov=ceil((a-b)/10.0) ;
+        }
+        else if(a<b)
+        {
+            mov=ceil((b-a)/10.0) ;
+        }
+        cout<<mov<<endl;
+    }
+    return 0;
+}
