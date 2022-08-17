@@ -1,0 +1,61 @@
+#include<iostream>
+using namespace std;
+int digitcount(int num);
+int main()
+{
+    int n,i,test,op,digit;
+    cin>>test;
+    for(int l=0;l<test;l++)
+    {
+        cin>>n;
+        op=0;
+        int ar[11];
+        int digit=digitcount(n);
+        if(n%2==0)
+        {
+            cout<<0<<endl;
+            continue;
+        }
+        else if(digit==1&&n%2!=0)
+        {
+            cout<<-1<<endl;
+            continue;
+        }
+        else
+        {
+            for(i=0;i<digit;i++)
+            {
+                ar[i]=n%10;
+                n=n/10;
+            }
+            for(i=digit-1;i>=0;i--)
+            {
+                if(ar[i]%2!=0)
+                {
+                    op++;
+                }
+                else
+                {
+                    op++;
+                    break;
+                }
+            }
+        }
+
+        if(op==0||op==digit)
+            cout<<-1<<endl;
+        else if(op<2)
+            cout<<1<<endl;
+        else
+            cout<<2<<endl;
+    }
+    return 0;
+}
+int digitcount(int num){
+   int Count = 0;
+  do {
+    num /= 10;
+    ++Count;
+  } while (num != 0);
+  return Count;
+}
