@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+    int t = 1;
+    cin >> t;
+    while (t--)
+    {
+        int n;
+        cin >> n;
+        map<int, pair<int, int>> mp_1, mp_2;
+        mp_1[0].first = 0;
+        mp_2[0].first = 0;
+        mp_1[0].second = 0;
+        mp_2[0].second = 0;
+        for (int i = 0; i < n; i++)
+        {
+            int x, y;
+            cin >> x >> y;
+ 
+            if (x == 0)
+            {
+                if (y < mp_1[0].first)
+                    mp_1[0].first = y;
+                if (y > mp_1[0].second)
+                    mp_1[0].second = y;
+            }
+            else if (y == 0)
+            {
+                if (x < mp_2[0].first)
+                    mp_2[0].first = x;
+                if (x > mp_2[0].second)
+                    mp_2[0].second = x;
+            }
+        }
+        int ans = (mp_1[0].second - mp_1[0].first + mp_2[0].second - mp_2[0].first) * 2;
+        
+        cout<<ans<<endl;
+    }
+    return 0;
+}
