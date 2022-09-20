@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+    int t, i;    
+    
+    cin >> t;
+    for (i = 0; i < t; i++)
+    {
+        int a,b,c,d , e;
+        cin>>a>>b>>c>>d>>e;
+        int c_r = c+e;
+        int c_l = c-e;
+        int d_r = d+e;
+        int d_l = d-e;
+ 
+        if((c_l<=1 && c_r>=a) || (d_l<=1 && d_r>=b) ) cout<<-1<<endl;
+        else if((c_l<=1 && d_l<=1) || (c_r>=a && d_r>=b) ) cout<<-1<<endl;
+        else cout<<a+b-2<<endl;
+ 
+    }
+    
+ 
+    return 0;
+}
