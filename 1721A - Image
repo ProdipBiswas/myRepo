@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+ 
+int main()
+{
+    int t, i, j, k;
+    char a, b, c, d;
+    
+    
+    cin >> t;
+    for (i = 0; i < t; i++)
+    {
+        cin >> a >> b;
+        getchar();
+        cin >> c >> d;
+        int arr[26]={0};
+        arr[a - 'a']++;
+        arr[b - 'a']++;
+        arr[c - 'a']++;
+        arr[d - 'a']++;
+        int count = 0;
+        for(int i=0; i<26; i++)
+        {
+            // cout<<arr[i]<<" ";
+            if(arr[i]) count++;
+        }
+ 
+        cout << count - 1 <<endl;
+    }
+    
+ 
+    return 0;
+}
